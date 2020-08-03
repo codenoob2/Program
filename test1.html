@@ -5,7 +5,7 @@
     <style>
       
       
-      .green { background:green; position:absolute; width:20px; height:20px; top:200px; left:200px; border-radius:50%;  }
+      .green { background:green; position:absolute; width:20px; height:20px; top:200px; left:200px; border-radius:50%; transition:2s; }
       
     </style>
   </head>
@@ -14,13 +14,18 @@
   <body>
     <!---elements-->
     
-    <div class="green"></div>
+    <div class="green" onmouseover="move(this)"></div>
     
     <script>
       //JS
-      
+      function move(el) {
+        var randomTop = Number(Math.floor(Math.random() * 600) + 1);
+        var randomLeft = Number(Math.floor(Math.random() * 1100) + 1);
+        el.style.top = randomTop + "px";
+        el.style.left = randomLeft + "px";
+      }
       
     </script>
   </body>
 </html>
-<!--Version 0.2-->
+<!--Version 0.3-->
