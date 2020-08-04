@@ -7,6 +7,9 @@
       
       .green { background:green; position:absolute; width:20px; height:20px; top:200px; left:200px; border-radius:50%; transition:2s; }
       
+      .text { background:lightgrey; color:red; position:absolute; width:100px; height:100px; top:200px; left:700px; }
+      #text1 {}
+      
     </style>
   </head>
   
@@ -15,6 +18,8 @@
     <!---elements-->
     
     <div class="green" onmouseover="move(this)"></div>
+    
+    <div class="text"><span id="text1"> This is Text 1 </span></div>
     
     <script>
       //JS
@@ -25,7 +30,22 @@
         el.style.left = randomLeft + "px";
       }
       
+      function generateText() {
+        var text = document.getElementById("text1");
+        var randomIndex = Number(Math.floor(Math.random() * 3) + 1);
+        if (randomIndex == 1) {
+          text.innerText = "randomIndex was 1";
+        }
+        else if (randomIndex == 1) {
+          text.innerText = "randomIndex was 12;
+        }
+        else if (randomIndex == 1) {
+          text.innerText = "randomIndex was 13;
+        }
+      }
+      
+      generateText();
     </script>
   </body>
 </html>
-<!--Version 0.3-->
+<!--Version 0.4-->
