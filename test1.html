@@ -4,8 +4,12 @@
     
     <style>
       
+      .invisible { display:none; }
       
       .green { background:green; position:absolute; width:20px; height:20px; top:200px; left:200px; border-radius:50%; transition:2s; }
+      
+      .red { background:red; position:absolute; width:20px; height:20px; top:200px; left:200px; border-radius:20%; transition:2s; }
+      #red {  }
       
       .text { background:lightgrey; color:red; position:absolute; width:100px; height:100px; top:200px; left:700px; }
       #text1 {}
@@ -19,10 +23,18 @@
     
     <div class="green" onmouseover="move(this)"></div>
     
+    <div class="invisible">
+      <div class="red" id="red"></div>
+    </div>
+    
+    <div id="container"></div>
+    
     <div class="text"><span id="text1"> This is Text 1 </span></div>
     
     <script>
       //JS
+      var allRed = document.querySelectorAll(".red");
+      
       function move(el) {
         var randomTop = Number(Math.floor(Math.random() * 600) + 1);
         var randomLeft = Number(Math.floor(Math.random() * 1100) + 1);
@@ -44,8 +56,29 @@
         }
       }
       
+      function generateRed() {
+        var div = document.getElementById("red");
+        var container = document.getElementById("container");
+        var redNumber = 0;
+        while (redNumber < 10) {
+          var newDiv = div.cloneNode(false);
+          var randomTop = Number(Math.floor(Math.random() * 600) + 1);
+          var randomLeft = Number(Math.floor(Math.random() * 1100) + 1);
+          newDiv.style.top = randomTop + "px";
+          newDiv.style.left = randomLeft + "px";
+          newDiv.id = div.id + "-" + Number(redNumber + 1);
+          container.appendChild(newDiv);
+          redNumber++;
+        }
+        if (redNumber == 10) {
+          div.parentNode.removeChild(div);
+          allRed = document.querySelectorAll(".red");
+        }
+      }
+      
+      generateRed();
       generateText();
     </script>
   </body>
 </html>
-<!--Version 0.6-->
+<!--Version 0.7-->
