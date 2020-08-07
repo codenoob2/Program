@@ -6,16 +6,18 @@
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon&display=swap" rel="stylesheet">
   
     <style>
-      #t1 {}
-      #b1 {}
-      #b2 {}
+      body { background:grey; }
+      .button { background:black; color:white; width:100px; height:40px; border-radius:0px; }
+      #t1 { color:white; }
+      #b1 { position:absolute; top:60px; left:40px}
+      #b2 { position:absolute; top:60px; left 100px}
     </style>
     
   </head>
   <body>
     <div><span id="t1">  Taking a walk one morning, you notice a large hole in the ground.  </span></div>
-    <button id="b1" onclick="useButton1()"> Ignore it. Hole? What hole? I don't see any hole. </button>
-    <button id="b2" onclick="useButton2()"> Peer inside. </button>
+    <button id="b1" class="button" onclick="useButton1()"> Ignore it. Hole? What hole? I don't see any hole. </button>
+    <button id="b2" class="button" onclick="useButton2()"> Peer inside. </button>
     <script>
       
       function generate() {
@@ -44,4 +46,4 @@
   </body>
 </html>
 
-<!------ Version 1 ------->
+<!------ Version 4 ------->
