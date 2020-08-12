@@ -19,7 +19,7 @@
   <body>
     <div><span id="t1">  Taking a walk one morning, you notice a large hole in the ground. A luminescent light comes from within.   </span></div>
     <button id="b1" class="button" onclick="useButton1()"> Ignore it. Hole? What hole? I don't see any hole. </button>
-    <button id="b2" class="button" onclick="useButton2()"> Peer inside. <span></button>
+    <button id="b2" class="button" onclick="useButton2()"> Peer inside. </button>
       
     
     <button id="b3" class="button" onclick="useButton3()"> Run. </button>
@@ -53,10 +53,27 @@
       
       function useButton3() {
         t1.innerText = "Runnning at top speed, you struggle to put distance between the two. Giant Derp seems very fast, and he catches up with you.";
+        var b1 = document.getElementById("b1");
+        b1.style.display = "none";
+        var b2 = document.getElementById("b2");
+        b2.style.display = "none";
+        var b3 = document.getElementById("b3");
+        b3.style.display = "block";
+        var b4 = document.getElementById("b4");
+        b4.style.display = "block";
       }
+   
       
       function useButton4() {
-        t1.innerText = "Standing your ground, you put your fists up and attempt to fight back. You are quickly squished into a pulp by Giant Derp. Game Over.
+        t1.innerText = "Standing your ground, you put your fists up and attempt to fight back. You are quickly squished into a pulp by Giant Derp. Game Over."
+        var b1 = document.getElementById("b1");
+        b1.style.display = "none";
+        var b2 = document.getElementById("b2");
+        b2.style.display = "none";
+        var b3 = document.getElementById("b3");
+        b3.style.display = "none";
+        var b4 = document.getElementById("b4");
+        b4.style.display = "none";
       }
         
         
@@ -65,4 +82,4 @@
   </body>
 </html>
 
-<!------ Version 6 ------->
+<!------ Version 7 ------->
